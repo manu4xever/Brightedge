@@ -26,16 +26,6 @@ python manage.py runserver
 
 KeyBERT may download a small sentence-transformers embedding model the first time topic extraction runs. If that model is unavailable, the app falls back to local keyword/keyphrase extraction.
 
-On Windows PowerShell:
-
-```powershell
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
-```
-
 Open `http://127.0.0.1:8000/`.
 
 ## Docker
