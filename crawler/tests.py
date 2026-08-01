@@ -179,3 +179,22 @@ class CrawlApiTests(TestCase):
 
         self.assertEqual(response.status_code, 504)
         self.assertIn("Timed out while fetching", response.json()["error"])
+
+    @patch("crawler.services.get_keybert_model", return_value=None)
+    @patch("crawler.services.httpx.get")
+    def test_post_crawl_works_without_csrf_token(self, mock_get, mock_keybert):
+        mock_response = Mock()
+        mock_response.text = SAMPLE_HTML
+        mock_response.url = "https://example.com/products/notebook"
+        mock_response.status_code = 200
+        mock_response.raise_for_status.return_value = None
+        mock_get.return_value = mock_response
+
+        csrf_client = APIClient(enforce_csrf_checks=True)
+        response = csrf_client.post(
+            "/api/v1/crawl",
+            {"url": "https://example.com/products/notebook"},
+            format="json",
+        )
+
+        self.assertEqual(response.status_code, 201)

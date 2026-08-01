@@ -1,5 +1,6 @@
 import httpx
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -19,6 +20,7 @@ def healthz(request):
 
 
 @api_view(["POST"])
+@csrf_exempt
 def crawl_create(request):
     request_serializer = CrawlRequestSerializer(data=request.data)
     request_serializer.is_valid(raise_exception=True)
