@@ -1,13 +1,10 @@
 # AI Usage
 
-Codex helped with planning, coding guidance, tests, and documentation for this assignment.
 
-Specifically, Codex assisted with:
-
-- Designing a small Django + Django REST Framework project structure.
-- Implementing local HTML metadata extraction logic.
-- Adding rule-based page classification and keyword topic heuristics.
-- Drafting API tests and service tests.
-- Writing setup, Docker, design, POC, and AI usage documentation.
+-Suggesting the project structure.
+-Helping implement HTML metadata extraction.
+-Helping add page classification and topic extraction using TF-IDF/BERT.
+-Suggesting test cases.
+-Drafting the architecture, POC, release plan, and AI usage documentation.
 
 No external topic-classification service is used by the application.
