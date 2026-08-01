@@ -1,10 +1,11 @@
-**Engineering Plan for Proof of Concept
-**
+**Engineering Plan for Proof of Concept**
+
 **Goal**
 
 The goal of the Proof of Concept is to prove that the crawler can take a URL, fetch the page, extract useful SEO metadata, classify the page, and return relevant topics.
 
 **Engineering Steps**
+
 1: Build the core crawler.
   - Fetch the page using HTTP.
   - Handle timeout, redirects, invalid URLs, and non-HTML pages.
@@ -47,6 +48,7 @@ The goal of the Proof of Concept is to prove that the crawler can take a URL, fe
   - ETA: 1-2 day.
 
 **Known and Trivial Work**
+
 These tasks are known and easy:
   - Creating Django project structure.
   - Creating API endpoint.
@@ -81,13 +83,13 @@ These tasks are known and easy:
 
 **POC Evaluation**
 The POC is successful if:
--A user can submit a URL and receive structured metadata.
--The API handles success and failure cases cleanly.
--The crawler does not crash on blocked, invalid, or non-HTML URLs.
--The output includes page type and relevant topics.
--The same logic works on product, article, and news-like pages.
--Tests pass.
--Documentation clearly explains how the POC scales to billions of URLs.
+  - A user can submit a URL and receive structured metadata.
+  - The API handles success and failure cases cleanly.
+  - The crawler does not crash on blocked, invalid, or non-HTML URLs.
+  - The output includes page type and relevant topics.
+  - The same logic works on product, article, and news-like pages.
+  - Tests pass.
+  - Documentation clearly explains how the POC scales to billions of URLs.
 
 **Quality Release Checklist**
 Before release:
